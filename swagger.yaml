@@ -6,11 +6,46 @@ info:
   title: Telco Offer API
   license:
     name: For Code Challenge Use Only
-basePath: /testtelco/realms/v1
+basePath: /members/me
 schemes:
   - https
 paths:
-  /members/me/offers:
+  /login:
+    post:
+      tags:
+        - auth
+      summary: Generate a jwt token for a member
+      description: Returns token to be used for other apis
+      operationId: userLogin
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: username and password of user
+          required: true
+          schema:
+            type: object
+            properties:
+              username:
+                type: string
+              password:
+                type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              username:
+                type: string
+              token:
+                type: string
+        '500':
+          description: Error in authentication
+  /offers:
     get:
       tags:
         - offers
@@ -21,8 +56,8 @@ paths:
         - application/json
       parameters:
         - in: header
-          name: access-token
-          description: Access Token
+          name: Authorization
+          description: JWT Access Token
           type: string
           required: true
       responses:
