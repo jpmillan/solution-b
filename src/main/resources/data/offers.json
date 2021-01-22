@@ -1,0 +1,23 @@
+[
+  {
+    "offerID": "100001",
+    "name": "Free car service from Toyota",
+    "details": "Free car service for all Elite level members who are toyota vehicle owners for the first quarter of 2021. Terms and Conditions applies.",
+    "claimLimit": 1,
+    "offerExpiry": "2021-03-30"
+  },
+  {
+    "offerID": "100002",
+    "name": "Free 15gb on your plan",
+    "details": "Free 15gb of data to be used on any month for the next 12 months. Terms and Conditions applies.",
+    "claimLimit": 5,
+    "offerExpiry": "2022-02-01"
+  },
+  {
+    "offerID": "100003",
+    "name": "15% off on one of your existing mobile plans",
+    "details": "15% off on an existing mobile plan of customer. Terms and Conditions applies.",
+    "claimLimit": 2,
+    "offerExpiry": "2022-01-30"
+  }
+]

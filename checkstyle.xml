@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN" "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+<module name="Checker">
+    <property name="severity" value="error" />
+    <module name="SuppressWarningsFilter" />
+    <module name="TreeWalker">
+        <module name="FinalClass"/>
+        <module name="InterfaceIsType"/>
+        <module name="TodoComment"/>
+        <module name="UpperEll"/>
+        <module name="FileContentsHolder" />
+        <module name="JavadocStyle">
+            <property name="checkEmptyJavadoc" value="true" />
+        </module>
+        <module name="EmptyBlock">
+            <property name="option" value="text" />
+        </module>
+        <module name="NeedBraces" />
+        <module name="LeftCurly" />
+        <module name="RightCurly">
+            <property name="option" value="same" />
+        </module>
+        <module name="AvoidNestedBlocks" />
+        <module name="ParenPad" />
+        <module name="TypecastParenPad" />
+        <module name="WhitespaceAfter" />
+        <module name="NoWhitespaceAfter">
+            <property name="tokens"
+                      value="BNOT, DEC, DOT, INC, LNOT, UNARY_MINUS, UNARY_PLUS" />
+        </module>
+        <module name="NoWhitespaceBefore" />
+        <module name="OperatorWrap" >
+            <property name="option" value="eol"/>
+        </module>
+        <module name="IllegalImport">
+            <property name="illegalPkgs" value="sun.*, org.apache.log4j, org.apache.commons.logging"/>
+        </module>
+        <module name="RedundantImport" />
+        <module name="UnusedImports" />
+        <module name="ModifierOrder" />
+        <module name="RedundantModifier" />
+        <module name="CovariantEquals" />
+        <module name="EmptyStatement" />
+        <module name="EqualsHashCode" />
+        <module name="InnerAssignment" />
+        <module name="MissingSwitchDefault" />
+        <module name="DefaultComesLast" />
+        <module name="ModifiedControlVariable" />
+        <module name="SimplifyBooleanExpression" />
+        <module name="SimplifyBooleanReturn" />
+        <module name="UnnecessaryParentheses" />
+        <module name="ParameterAssignment" />
+        <module name="SuperClone" />
+        <module name="SuperFinalize" />
+        <module name="MultipleVariableDeclarations" />
+        <module name="ConstantName" />
+        <module name="LocalFinalVariableName" />
+        <module name="LocalVariableName" />
+        <module name="MemberName" />
+        <module name="MethodName" />
+        <module name="PackageName">
+            <property name="format" value="^[a-z]+(\.[a-z][a-z0-9]*)*$" />
+        </module>
+        <module name="ParameterName" />
+        <module name="StaticVariableName" />
+        <module name="TypeName" />
+        <module name="StringLiteralEquality" />
+        <module name="RegexpSinglelineJava">
+            <property name="format"
+                      value="System\.out|System\.err|\.printStackTrace\(\)" />
+            <property name="ignoreComments" value="true" />
+        </module>
+        <module name="IllegalInstantiation">
+            <property name="classes"
+                      value="java.lang.Exception, java.lang.RuntimeException" />
+        </module>
+        <module name="IllegalType">
+            <property name="illegalClassNames"
+                      value="java.util.GregorianCalendar, java.util.Hashtable, java.util.HashSet, java.util.HashMap, java.util.ArrayList, java.util.LinkedList, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.TreeSet, java.util.TreeMap, java.util.Vector" />
+            <property name="format" value="^$" />
+        </module>
+        <module name="NestedIfDepth">
+            <property name="max" value="1" />
+        </module>
+        <module name="NestedTryDepth" />
+        <module name="ExecutableStatementCount">
+            <property name="max" value="15" />
+        </module>
+        <module name="MethodLength">
+            <property name="max" value="25" />
+        </module>
+
+        <module name="AnonInnerLength">
+            <property name="max" value="14" />
+        </module>
+        <module name="LineLength">
+            <property name="max" value="155" />
+        </module>
+        <module name="ArrayTypeStyle" />
+        <module name="BooleanExpressionComplexity">
+            <property name="max" value="2" />
+        </module>
+        <module name="ClassDataAbstractionCoupling">
+            <property name="max" value="9" />
+        </module>
+        <module name="CyclomaticComplexity">
+            <property name="max" value="8" />
+        </module>
+        <module name="NPathComplexity">
+            <property name="max" value="10" />
+        </module>
+        <module name="JavaNCSS">
+            <property name="methodMaximum" value="25" />
+        </module>
+        <module name="LeftCurly" />
+        <module name="SuppressWarningsHolder" />
+    </module>
+    <module name="SuppressionCommentFilter">
+        <property name="offCommentFormat" value="CHECKSTYLE\:OFF ([\w\|]+)" />
+        <property name="onCommentFormat" value="CHECKSTYLE\:ON ([\w\|]+)" />
+        <property name="checkFormat" value="$1" />
+    </module>
+<!--    <module name="FileTabCharacter" />-->
+
+</module>
+
+

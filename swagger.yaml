@@ -1,0 +1,75 @@
+swagger: '2.0'
+x-authapikey: true
+info:
+  description: sample telco offer API
+  version: '1.0'
+  title: Telco Offer API
+  license:
+    name: For Code Challenge Use Only
+basePath: /testtelco/realms/v1
+schemes:
+  - https
+paths:
+  /members/me/offers:
+    get:
+      tags:
+        - offers
+      summary: Get the offers for a member
+      description: Returns list of offers available for a member
+      operationId: getOffers
+      produces:
+        - application/json
+      parameters:
+        - in: header
+          name: access-token
+          description: Access Token
+          type: string
+          required: true
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/OfferResponse'
+        '400':
+          description: Member not found to retrieve offers for
+definitions:
+  OfferResponse:
+    type: object
+    properties:
+      CustomerOffers:
+        type: array
+        items:
+          $ref: '#/definitions/CustomerOffer'
+      Status:
+        type: string
+      ErrorInfo:
+        $ref: '#/definitions/OfferErrorInfo'
+  OfferErrorInfo:
+    type: object
+    properties:
+      Code:
+        type: string
+      Source:
+        type: string
+      ErrorID:
+        type: string
+      Severity:
+        type: string
+      Message:
+        type: string
+  CustomerOffer:
+    type: object
+    properties:
+      EndDate:
+        type: string
+      Hidden:
+        type: string
+      OfferId:
+        type: string
+      PropositionId:
+        type: string
+      StartDate:
+        type: string
+      Status:
+        type: string
+    title: CustomerOffer
