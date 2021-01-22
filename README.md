@@ -1,3 +1,4 @@
+
 # Solution B
 
 ### Reference Documentation
@@ -17,21 +18,19 @@ Expectation is that there will be:
 
 ### Instructions
 
-download the repository
-$ git clone https://github.com/jpmillan/solution-b.git
+- download the repository
+- run the application
 
-$ cd solution-b
-$ mvn package
-$ mvn spring-boot:run
+    `$ git clone https://github.com/jpmillan/solution-b.git`
+    `$ cd solution-b`
+    `$ mvn package`
+    `$ mvn spring-boot:run`
 
-to access offers list, generate a jwt token first
+- to access offers list, generate a jwt token first
+`$ curl -v localhost:8081/member/me/offers`
 
-
-
-$ curl -v localhost:8081/member/me/offers
-
-from postman
-execute a POST request on http://localhost:8081/login
+- from postman, 
+  execute a POST request on `http://localhost:8081/login`
 with Body 
 
 {
@@ -43,11 +42,11 @@ a token should be generated
 
 {
     "username": "testuser1",
-    "token": <JWT TOKEN>
+    "token": < JWT TOKEN >
 }
 
-copy the contents of the token and create a new postman GET request for http://localhost:8081/member/me/offers
-in the headers tab, add an Authorization key with value of "Bearer + <JWT TOKEN>", where <JWT TOKEN> is the value of the token response from the login api
+copy the contents of the token and create a new postman GET request for `http://localhost:8081/member/me/offers`
+in the headers tab, add an `Authorization` key with value of `"Bearer + < JWT TOKEN >"`, where `< JWT TOKEN >` is the value of the token response from the login api
 
 ## Tech Stack
 
@@ -56,3 +55,4 @@ in the headers tab, add an Authorization key with value of "Bearer + <JWT TOKEN>
 - Spring security
 - JWT
 - Checkstyle
+- Swagger
