@@ -19,24 +19,33 @@ Expectation is that there will be:
 ### Instructions
 
 - download the repository
-- run the application
 
     `$ git clone https://github.com/jpmillan/solution-b.git`
+    
     `$ cd solution-b`
-    `$ mvn package`
-    `$ mvn spring-boot:run`
+    
+    `$ mvn clean install`
+
+- Run the application (via Docker)    
+    `$ docker-compose up`
 
 - to access offers list, generate a jwt token first
-`$ curl -v localhost:8081/member/me/offers`
-
 - from postman, 
   execute a POST request on `http://localhost:8081/login`
 with Body 
 
-{
-    "username":"testuser1",
-    "password":"test123"
-}
+ ` {
+        "username":"testuser1",
+        "password":"test123"
+    }`  
+
+or 
+
+ ` {
+        "username":"jp",
+        "password":"test123"
+    }`  
+
 
 a token should be generated
 
@@ -56,3 +65,4 @@ in the headers tab, add an `Authorization` key with value of `"Bearer + < JWT TO
 - JWT
 - Checkstyle
 - Swagger
+- Docker
