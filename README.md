@@ -1,4 +1,5 @@
 
+
 # Solution B
 
 ### Reference Documentation
@@ -56,6 +57,21 @@ a token should be generated
 
 copy the contents of the token and create a new postman GET request for `http://localhost:8081/member/me/offers`
 in the headers tab, add an `Authorization` key with value of `"Bearer + < JWT TOKEN >"`, where `< JWT TOKEN >` is the value of the token response from the login api
+
+
+## To Access via ReactJS app
+
+ download the web repository
+
+    `$ git clone https://github.com/jpmillan/solution-b-web.git`
+    
+    `$ cd solution-b-web`
+	
+	`$ npm install`
+	
+	`$ npm start`
+
+access the page via  **`http://localhost:3000/`**
 
 ## Tech Stack
 
