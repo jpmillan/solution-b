@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import static org.springframework.http.ResponseEntity.badRequest;
 import static org.springframework.http.ResponseEntity.ok;
 
 @RestController
@@ -24,7 +23,7 @@ public class LoginControiler {
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseEntity<Authentication> userLogin(@RequestBody UserCredentials userCredentials) {
-
+        log.info("inside userLogin with " + userCredentials.getUsername());
         if (userCredentials == null || (userCredentials.getUsername() == null || userCredentials.getPassword() == null)) {
             log.error("Missing login credentials");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
@@ -45,7 +44,7 @@ public class LoginControiler {
             authenticationResponse.setToken(token);
             return ok(authenticationResponse);
         }
-        log.error(" unable to authenticate user [%s] "+ userCredentials.getUsername());
+        log.error("unable to authenticate user [%s] "+ userCredentials.getUsername());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
     }
 

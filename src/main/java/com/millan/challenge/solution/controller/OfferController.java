@@ -27,6 +27,7 @@ public class OfferController {
     @Secured("ROLE_USER")
     @RequestMapping(method = RequestMethod.GET, path = "/offers")
     public ResponseEntity<List<Offer>> getMemberOffers() {
+        log.info("getMemberOffers called");
         return ResponseEntity.ok(offerService.getOffers());
     }
 

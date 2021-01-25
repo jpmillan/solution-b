@@ -13,10 +13,10 @@ import static java.time.ZoneOffset.UTC;
 public class JwtService {
 
     private static final String ISSUER = "com.millan.challenge";
-    private static final String sampleSecret = "mysecret";
+    private static final String SAMPLE_SECRET = "mysecret";
 
     public String generateToken(String username) throws IOException, URISyntaxException {
-        byte[] secretKey = sampleSecret.getBytes();
+        byte[] secretKey = SAMPLE_SECRET.getBytes();
         Date expiration = Date.from(LocalDateTime.now(UTC).plusHours(2).toInstant(UTC));
 
           JwtBuilder  jb = Jwts.builder()
@@ -29,7 +29,7 @@ public class JwtService {
     }
 
     public String verifyToken(String token) throws IOException, URISyntaxException {
-        byte[] secretKey = sampleSecret.getBytes();
+        byte[] secretKey = SAMPLE_SECRET.getBytes();
         Jws<Claims> claims = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
         //returning authenticated/verified username
         return claims.getBody().getSubject();

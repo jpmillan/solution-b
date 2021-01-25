@@ -25,7 +25,7 @@ public class OfferService {
         } catch (IOException e) {
             log.error("error caught:" + e.getMessage());
         }
-
+        log.info("returning offers with size:" + offers.size());
         return offers;
     }
 
